@@ -1,5 +1,5 @@
 /*
-Copyright 2022 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 export default {
     phpIsDisabled: `${common.php} 已停用。`,
@@ -43,7 +43,6 @@ export default {
     phpBackupServer: `${common.php} 備份伺服器`,
     tcp: 'TCP',
     hhvmSocket: 'HHVM 通訊端',
-    php5Socket: '5.x 通訊端',
     php70Socket: '7.0 通訊端',
     php71Socket: '7.1 通訊端',
     php72Socket: '7.2 通訊端',
@@ -51,6 +50,7 @@ export default {
     php74Socket: '7.4 通訊端',
     php80Socket: '8.0 通訊端',
     php81Socket: '8.1 通訊端',
+    php82Socket: '8.2 通訊端',
     phpSocket: 'PHP 通訊端',
     custom: '自訂',
     disabled: '停用',

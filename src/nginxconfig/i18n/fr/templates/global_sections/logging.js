@@ -1,5 +1,5 @@
 /*
-Copyright 2021 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,11 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 export default {
     enableFileNotFoundErrorLogging: `${common.enable} les erreurs de fichiers introuvables lors de la journalisation`,
     logformat: 'log_format',
+    level: 'logging level', // TODO: translate
     enableCloudflare: 'ajouter les en-têtes de requête CloudFlare au format de journal par défaut',
     cfRay: 'CF-Ray',
     cfConnectingIp: 'CF-Connecting-IP',

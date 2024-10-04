@@ -1,5 +1,5 @@
 /*
-Copyright 2020 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../common';
+import common from '../common.js';
 
 export default {
     title: `${common.nginx}Configuração`,
@@ -36,4 +36,5 @@ export default {
     globalConfig: 'Configuração global',
     setup: 'Configurar',
     configFiles: 'Arquivos de configuração',
+    copied: 'Copiado',
 };

@@ -1,5 +1,5 @@
 /*
-Copyright 2022 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,11 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 export default {
     reverseProxyIsDisabled: `${common.reverseProxy} は無効です。`,
     reverseProxyCannotBeEnabledWithPhp: `${common.php} が有効な場合は、 ${common.reverseProxy} を有効にすることはできません。`,
     reverseProxyCannotBeEnabledWithPython: `${common.python} が有効な場合は、 ${common.reverseProxy} を有効にすることはできません。`,
     enableReverseProxy: `${common.reverseProxyLower}を${common.enable}`,
+    proxyHostHeader: 'Proxy Host header', // TODO: translate
 };

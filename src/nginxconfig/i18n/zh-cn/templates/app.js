@@ -1,5 +1,5 @@
 /*
-Copyright 2020 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../common';
+import common from '../common.js';
 
 export default {
     title: `${common.nginx} 配置`,
@@ -36,4 +36,5 @@ export default {
     globalConfig: '全局配置',
     setup: '使用配置',
     configFiles: '配置文件',
+    copied: '已复制',
 };

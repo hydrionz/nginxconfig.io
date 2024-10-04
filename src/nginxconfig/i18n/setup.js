@@ -1,5 +1,5 @@
 /*
-Copyright 2022 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -25,7 +25,7 @@ THE SOFTWARE.
 */
 
 import { createI18n } from 'vue-i18n';
-import { defaultPack, defaultPackData, toSep, availablePacks } from '../util/language_packs';
+import { defaultPack, defaultPackData, toSep, availablePacks } from '../util/language_packs.js';
 
 // Load in the full default pack
 const i18nPacks = {};
@@ -46,7 +46,7 @@ export const getI18n = async () => {
         if (availablePack === defaultPack) continue;
         if (i18nPacks[availablePack]) continue;
         const { default: languageData } = await import(
-            /* webpackInclude: /i18n\/[^/]+\/languages\.js$/ */
+            /* webpackInclude: /i18n[\/\\][^\/\\]+[\/\\]languages\.js$/ */
             /* webpackMode: "eager" */
             `./${toSep(availablePack, '-')}/languages.js`
         );
@@ -62,7 +62,7 @@ export const getI18n = async () => {
     return i18n;
 };
 
-const loadLanguagePack = async pack => {
+const loadLanguagePack = async (pack) => {
     // If same language, do nothing
     if (i18n.locale === pack) return;
 
@@ -72,14 +72,14 @@ const loadLanguagePack = async pack => {
     // Load in the full pack
     // Use webpack magic to only build chunks for lang/index.js
     const { default: packData } = await import(
-        /* webpackInclude: /i18n\/[^/]+\/index\.js$/ */
+        /* webpackInclude: /i18n[\/\\][^\/\\]+[\/\\]index\.js$/ */
         /* webpackMode: "lazy" */
         `./${toSep(pack, '-')}/index.js`
     );
     i18nPacks[pack] = packData;
 };
 
-export const setLanguagePack = async pack => {
+export const setLanguagePack = async (pack) => {
     // If i18n not loaded, do nothing
     if (!i18n) return;
 

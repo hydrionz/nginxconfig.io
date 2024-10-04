@@ -1,5 +1,5 @@
 /*
-Copyright 2021 DigitalOcean
+Copyright 2022 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,16 +24,18 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-export default global => {
+export default (global) => {
     const config = {};
 
     config.proxy_http_version = '1.1';
     config.proxy_cache_bypass = '$http_upgrade';
 
+    config['# Proxy SSL'] = '';
+    config['proxy_ssl_server_name'] = 'on';
+
     config['# Proxy headers'] = '';
     config['proxy_set_header Upgrade'] = '$http_upgrade';
     config['proxy_set_header Connection'] = '$connection_upgrade';
-    config['proxy_set_header Host'] = '$host';
     config['proxy_set_header X-Real-IP'] = '$remote_addr';
     config['proxy_set_header Forwarded'] = '$proxy_add_forwarded';
     if (global.reverseProxy.proxyCoexistenceXForwarded.computed == 'passOn') {
@@ -47,7 +49,6 @@ export default global => {
         config['proxy_set_header X-Forwarded-Host'] = '""';
         config['proxy_set_header X-Forwarded-Port'] = '""';
     }
-    
 
     config['# Proxy timeouts'] = '';
     config['proxy_connect_timeout'] = global.reverseProxy.proxyConnectTimeout.computed;

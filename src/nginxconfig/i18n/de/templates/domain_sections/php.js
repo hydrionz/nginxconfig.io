@@ -1,5 +1,5 @@
 /*
-Copyright 2022 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,7 +24,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 export default {
     phpIsDisabled: `${common.php} ist deaktiviert.`,
@@ -43,7 +43,6 @@ export default {
     phpBackupServer: `${common.php} Backup Server`,
     tcp: 'TCP',
     hhvmSocket: 'HHVM Socket',
-    php5Socket: '5.x Socket',
     php70Socket: '7.0 Socket',
     php71Socket: '7.1 Socket',
     php72Socket: '7.2 Socket',
@@ -51,6 +50,7 @@ export default {
     php74Socket: '7.4 Socket',
     php80Socket: '8.0 Socket',
     php81Socket: '8.1 Socket',
+    php82Socket: '8.2 Socket',
     phpSocket: 'PHP Socket',
     custom: 'Benutzerdefiniert',
     disabled: 'Deaktiviert',

@@ -1,5 +1,5 @@
 /*
-Copyright 2021 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,12 +24,13 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 const certbot = 'Certbot';
 
 export default {
     commentOutSslDirectivesInConfiguration: `Zakomentuj dyrektywy związane z ${common.ssl} w pliku konfiguracyjnym:`,
+    sslOffDeprecationWarning: `This command will add a temporary <code class="slim">ssl off</code> directive to ensure that ${common.ssl} directives are not active. This may cause ${common.nginx} to emit a warning, which is safe to ignore. The directive will be removed once ${certbot} is configured.`, // TODO: translate
     reloadYourNginxServer: `Przeładuj usługę ${common.nginx}:`,
     obtainSslCertificatesFromLetsEncrypt: `Uzysjak certyfikat ${common.ssl} od ${common.letsEncrypt} za pomocą ${certbot}:`,
     uncommentSslDirectivesInConfiguration: `Odkomentuj dyrektywy związane z ${common.ssl} w pliku konfiguracyjnym:`,

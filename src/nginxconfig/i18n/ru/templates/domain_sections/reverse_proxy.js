@@ -1,5 +1,5 @@
 /*
-Copyright 2021 DigitalOcean
+Copyright 2024 DigitalOcean
 
 This code is licensed under the MIT License.
 You may obtain a copy of the License at
@@ -24,11 +24,12 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 THE SOFTWARE.
 */
 
-import common from '../../common';
+import common from '../../common.js';
 
 export default {
     reverseProxyIsDisabled: `${common.reverseProxy} выключено.`,
     reverseProxyCannotBeEnabledWithPhp: `${common.reverseProxy} не может быть включен, пока включен ${common.php}.`,
     reverseProxyCannotBeEnabledWithPython: `${common.reverseProxy} не может быть включен, пока включен ${common.python}.`,
     enableReverseProxy: `${common.enable} ${common.reverseProxyLower}`,
+    proxyHostHeader: 'Proxy Host header', // TODO: translate
 };
